@@ -175,6 +175,7 @@ class AgentModel():
                     if parameter not in request['parameters']:
                         # Get the request's index
                         request_index = self.incomplete_intents_stack.index(request)
+                        break
 
             # Fill missing parameters given from the Information Intent
             for parameter in analyzed_text['parameters']:
@@ -187,6 +188,7 @@ class AgentModel():
             for request in self.incomplete_intents_stack:
                 if all_parameters_found(intent, request):
                     request_index = self.incomplete_intents_stack.index(request)
+                    break
 
             if request_index != -1:
                 
@@ -207,6 +209,16 @@ class AgentModel():
                 ready_request['response'] = self.get_intent_response(intent, ready_request)
                 analyzed_text = ready_request
 
+            else:
+                # Pick the most recent incomplete request
+                # *If Information Intent is processed that means that IIS is not empty (Else Info would be out of context)
+                request = self.incomplete_intents_stack[0]
+                new_intent = self.intents_info[request['intents']['name']]
+
+                for parameter in new_intent['parameters']:
+                    if parameter not in request:
+                        analyzed_text['response'] = select_sentence(request['parameters'], new_intent['persistence_responses'][parameter])
+                        break
 
         return analyzed_text
 
