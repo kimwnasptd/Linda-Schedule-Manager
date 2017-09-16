@@ -128,6 +128,16 @@ def select_sentence(parameters, choices_list):
     return response
 
 
+def all_parameters_found(intent, analyzed_text):
+    ''' Returns True if Intent has all the required parameters '''
+
+    for parameter in intent['parameters']:
+        if parameter not in analyzed_text['parameters']:
+            return False
+
+    return True
+
+
 class AgentModel():
 
     modelInterpreter = None
@@ -195,6 +205,10 @@ class AgentModel():
                 ready_request = self.incomplete_intents_stack[request_index]
                 new_intent = self.intents_info[ready_request['intents']['name']]
 
+                # Remove the request from the IIS and clear the "Intent - Parameters" context
+                del self.incomplete_intents_stack[request_index]
+                self.active_contexts[user_id].pop(new_intent + ' - Parameters', None)
+
                 # Set the context
                 if 'context_set' in ready_request:
                     self.active_contexts[user_id][intent['context_set']] = ready_request
@@ -222,6 +236,25 @@ class AgentModel():
 
         return analyzed_text
 
+    def get_intent_response(self, intent, analyzed_text):
+        ''' This function is responsible for handling the responses for the Intents '''
+        response = select_sentence(analyzed_text['parameter'], intent['response'])
+        return response
+
+    def out_of_context(intent):
+        ''' Returns True if given intent IS OUT of Context'''
+        if intent['tag'] == 'Information':
+
+            # Information Intent is out of Context if there are no elements in IIS
+            if not self.incomplete_intents_stack:
+                return True
+        else:
+            for needed_context in intent['context_needed']:
+                if needed_context in self.active_contexts[user_id]:
+                    return False
+
+            return True
+
     def getResponse(self, input_text, user_id='kimonas'):
         
         analyzed_text = self.modelInterpreter.parse(input_text)
@@ -243,7 +276,7 @@ class AgentModel():
         # In Context
         else:
 
-            if all_parameters_found(intent, analyzed_text): # To-do
+            if all_parameters_found(intent, analyzed_text): 
                 # All the needed parameters were provided
 
                 # Set the context, if the intent sets one
@@ -251,10 +284,10 @@ class AgentModel():
                     self.active_contexts[user_id][intent["context_set"]] = analyzed_text
                 
                 # Apply the action for the specific intent
-                analyzed_text = self.apply_intent_action(intent, analyzed_text) # To-do
+                analyzed_text = self.apply_intent_action(intent, analyzed_text) 
 
                 # Return the respective response for the intent
-                analyzed_text['response'] = self.get_intent_response(intent, analyzed_text) # To-do
+                analyzed_text['response'] = self.get_intent_response(intent, analyzed_text) 
                 return analyzed_text
 
             else:
