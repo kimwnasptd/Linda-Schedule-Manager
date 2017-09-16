@@ -249,6 +249,10 @@ class AgentModel():
             if not self.incomplete_intents_stack:
                 return True
         else:
+            # If intent has no needed contexts then it is in context
+            if not intent['context_needed']:
+                return False
+
             for needed_context in intent['context_needed']:
                 if needed_context in self.active_contexts[user_id]:
                     return False
