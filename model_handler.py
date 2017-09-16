@@ -169,7 +169,7 @@ class AgentModel():
 
         self.modelInterpreter = interpreter
 
-    def apply_intent_action(self, intent, analyzed_text):
+    def apply_intent_action(self, intent, analyzed_text, user_id):
         ''' This is the part were the 'fullfillment is happening.
             If an Intent has needed parameters or needs to do a webhook
             this is were it is implemented. Currently no webhooks '''
@@ -207,14 +207,14 @@ class AgentModel():
 
                 # Remove the request from the IIS and clear the "Intent - Parameters" context
                 del self.incomplete_intents_stack[request_index]
-                self.active_contexts[user_id].pop(new_intent + ' - Parameters', None)
+                self.active_contexts[user_id].pop(new_intent['tag'] + ' - Parameters', None)
 
                 # Set the context
                 if 'context_set' in ready_request:
                     self.active_contexts[user_id][intent['context_set']] = ready_request
 
                 # Apply the action for the completed intent
-                ready_request = self.apply_intent_action(new_intent, ready_request)
+                ready_request = self.apply_intent_action(new_intent, ready_request, user_id)
 
                 # Add the Information Intents' info to the completed Intent
                 ready_request['information_intent'] = analyzed_text['intents']
@@ -241,7 +241,7 @@ class AgentModel():
         response = select_sentence(analyzed_text['parameter'], intent['response'])
         return response
 
-    def out_of_context(intent):
+    def out_of_context(intent, user_id):
         ''' Returns True if given intent IS OUT of Context'''
         if intent['tag'] == 'Information':
 
@@ -271,7 +271,7 @@ class AgentModel():
         self.update_active_contexts() # To-do
 
         # Check if the given intent is out of context
-        if self.out_of_context(intent): # To-do
+        if self.out_of_context(intent, user_id): # To-do
             # Go to Fallback responses
             response = select_sentence({}, self.fallback_responses) 
             analyzed_text['response'] = response
@@ -288,7 +288,7 @@ class AgentModel():
                     self.active_contexts[user_id][intent["context_set"]] = analyzed_text
                 
                 # Apply the action for the specific intent
-                analyzed_text = self.apply_intent_action(intent, analyzed_text) 
+                analyzed_text = self.apply_intent_action(intent, analyzed_text, user_id) 
 
                 # Return the respective response for the intent
                 analyzed_text['response'] = self.get_intent_response(intent, analyzed_text) 
