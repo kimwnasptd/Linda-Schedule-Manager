@@ -1,6 +1,8 @@
 # Holds the data that will be loaded
 # for the agent's intents
 
+# Lifespan : [Minutes, Requests]
+
 INTENTS = {
     "Add Event" : {
         "tag" : "Add Event",
@@ -14,11 +16,8 @@ INTENTS = {
                       "Yes sir, $eventType inserted succesfully",
                       "Right away sir, just added it"],
         "context_set" : "Adding-Event",
-        "out_of_context_responses" : ["I'm in the middle of adding something to your schedule",
-                                      "Interupting is rude!", "Not finished with your last call",
-                                      "We'll talk about that once I finish the adding a $eventType to your schedule",
-                                      "We were talking about a $eventType, please concentrate"],
-        "context_needed" : ["Idle-State"]
+        "context_needed" : [],
+        "lifespan" : [3, 5]
     },
 
     "Information" : {
@@ -28,7 +27,7 @@ INTENTS = {
         "response" : ["Thank you",
                       "delightfully"],
         "context_needed" : ["Adding-Event","Checking-the-Schedule"],
-        "out_of_context_responses" : ["Debug quickly, I don't know how that happened"]
+        "lifespan" : [0,0]
     },
 
     "Check Events" : {
@@ -43,19 +42,8 @@ INTENTS = {
                       "Not too busy, only $eventNum $eventType for $DATE",
                       "If my hearing is correct then you have $eventNum $eventType for $DATE"],
         "context_set" : "Checking-the-Schedule",
-        "out_of_context_responses" : ["Need some more info in order to give you details about your schedule",
-                                      "I'm looking up your schedule", "Please wait unti I finish checking"],
-        "context_needed" : ["Idle-State"]
-    },
-
-    "Idle" : {
-        "tag" : "Idle",
-        "parameters" : [],
-        "persistence_responses" : {},
-        "response" : [],
         "context_needed" : [],
-        "out_of_context_responses" : ["Currently I can only add or remove events to your schedule and inform you about them",
-                                      "I wasn't doing anything right now sir"]
+        "lifespan" : [3, 5]
     },
 
     "Negative" : {
@@ -64,7 +52,7 @@ INTENTS = {
         "persistence_responses" : {},
         "response" : [],
         "context_needed" : [],
-        "out_of_context_responses" : ["Debug quickly, this is an out of context response from the Negative Context"]
+        "lifespan" : [1,3]
     },
 
     "Positive" : {
@@ -73,7 +61,7 @@ INTENTS = {
         "persistence_responses" : {},
         "response" : [],
         "context_needed" : [],
-        "out_of_context_responses" : ["Debug quickly, this is an out of context response from the Positive Context"]
+        "lifespan" : [1,3]
     },
 
     "Cancel" : {
@@ -82,8 +70,7 @@ INTENTS = {
         "persistence_responses" : {},
         "response" : [],
         "context_needed" : ["Adding-Event", "Checking-the-Schedule"],
-        "context_set" : "Idle-State",
-        "out_of_context_responses" : ["Debug quickly, this is an out of context response from the Cancel Context"]
+        "lifespan" : [1,3]
     },
 }
 

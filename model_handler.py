@@ -271,7 +271,7 @@ class AgentModel():
         self.update_active_contexts() # To-do
 
         # Check if the given intent is out of context
-        if self.out_of_context(intent, user_id): # To-do
+        if self.out_of_context(intent, user_id): 
             # Go to Fallback responses
             response = select_sentence({}, self.fallback_responses) 
             analyzed_text['response'] = response
