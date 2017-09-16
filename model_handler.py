@@ -4,7 +4,7 @@
 import sys
 import json
 import random
-import datetime
+from datetime import datetime
 from rasa_nlu.model import Metadata, Interpreter
 from rasa_nlu.config import RasaNLUConfig
 
@@ -159,6 +159,57 @@ class AgentModel():
 
         self.modelInterpreter = interpreter
 
+    def apply_intent_action(self, intent, analyzed_text):
+        ''' This is the part were the 'fullfillment is happening.
+            If an Intent has needed parameters or needs to do a webhook
+            this is were it is implemented. Currently no webhooks '''
+
+        # Information Action is embeded with the core logic. Not advised to edit this code
+        if intent['tag'] = 'Information':
+
+            # Loop through IIS and get the first entry that has a missing parameter given in Information Intent
+            request_index = 0
+
+            for request in self.incomplete_intents_stack:
+                for parameter in analyzed_text['parameters']:
+                    if parameter not in request['parameters']:
+                        # Get the request's index
+                        request_index = self.incomplete_intents_stack.index(request)
+
+            # Fill missing parameters given from the Information Intent
+            for parameter in analyzed_text['parameters']:
+                if parameter not in self.incomplete_intents_stack[request_index]['parameters']:
+                    self.incomplete_intents_stack[request_index]['parameters'][parameter] = analyzed_text['parameters'][parameter]
+
+            # Check the IIS to see if there is a request that has now all its needed parameters
+            request_index = -1
+            
+            for request in self.incomplete_intents_stack:
+                if all_parameters_found(intent, request):
+                    request_index = self.incomplete_intents_stack.index(request)
+
+            if request_index != -1:
+                
+                ready_request = self.incomplete_intents_stack[request_index]
+                new_intent = self.intents_info[ready_request['intents']['name']]
+
+                # Set the context
+                if 'context_set' in ready_request:
+                    self.active_contexts[user_id][intent['context_set']] = ready_request
+
+                # Apply the action for the completed intent
+                ready_request = self.apply_intent_action(new_intent, ready_request)
+
+                # Add the Information Intents' info to the completed Intent
+                ready_request['information_intent'] = analyzed_text['intents']
+
+                # Get the response for the completed Intent
+                ready_request['response'] = self.get_intent_response(intent, ready_request)
+                analyzed_text = ready_request
+
+
+        return analyzed_text
+
     def getResponse(self, input_text, user_id='kimonas'):
         
         analyzed_text = self.modelInterpreter.parse(input_text)
@@ -171,9 +222,9 @@ class AgentModel():
         self.update_active_contexts() # To-do
 
         # Check if the given intent is out of context
-        if self.out_of_context(intent):
+        if self.out_of_context(intent): # To-do
             # Go to Fallback responses
-            response = select_sentence({}, self.fallback_responses) # To-do
+            response = select_sentence({}, self.fallback_responses) 
             analyzed_text['response'] = response
             return analyzed_text
 
@@ -188,10 +239,11 @@ class AgentModel():
                     self.active_contexts[user_id][intent["context_set"]] = analyzed_text
                 
                 # Apply the action for the specific intent
-                self.apply_intent_action(intent, analyzed_text) # To-do
+                analyzed_text = self.apply_intent_action(intent, analyzed_text) # To-do
 
                 # Return the respective response for the intent
-                return self.get_intent_response(intent, analyzed_text) # To-do
+                analyzed_text['response'] = self.get_intent_response(intent, analyzed_text) # To-do
+                return analyzed_text
 
             else:
                 # User must present missing parameters
@@ -211,7 +263,6 @@ class AgentModel():
                         analyzed_text['response'] = select_sentence(analyzed_text['parameters'], 
                                                                     intent['persistence_responses'][parameter])
                         return analyzed_text
-
 
     def printResponse(self, input_text):
 
