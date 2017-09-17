@@ -11,11 +11,10 @@ matplotlib==1.5.3
 requests==2.14.2
 tqdm==4.11.2
 numpy
-sklearn
+sklearn==0.19.0
 sklearn_crfsuite
 spacy
 duckling
-scikit-learn
 scipy
 
 # python -m spacy.en.download all
