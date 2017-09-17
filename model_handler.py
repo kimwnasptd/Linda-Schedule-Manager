@@ -4,7 +4,7 @@
 import sys
 import json
 import random
-from datetime import datetime
+from datetime import datetime, timedelta
 from rasa_nlu.model import Metadata, Interpreter
 from rasa_nlu.config import RasaNLUConfig
 
@@ -76,7 +76,7 @@ def reformResult(prediction, request_num):
     result["intents"] = prediction["intent"]
     result["parameters"] = parameters
     result["text"] = prediction["text"]
-    result["time_created"] = datetime.now()
+    result['time_created'] = datetime.now()
     result['request_num'] = request_num
 
     return result
@@ -149,7 +149,7 @@ class AgentModel():
 
     active_contexts = {'kimonas': {} }
     incomplete_intents_stack = []
-    requests_num = {}
+    requests_num = {'kimonas': 0}
 
     def __init__(self, model_dir=MODEL_DIR, conf_file=CONFIG_DIR):
         # Takes some time,to initialize
@@ -171,19 +171,20 @@ class AgentModel():
 
         self.modelInterpreter = interpreter
 
-    def assign_active_contexts(self):
+    def assign_active_contexts(self, user_id):
         ''' Updates the "active_contexts" entry in all active contexts '''
-        active_contexts = self.active_contexts[user_id].keys()
+        active_contexts = list(self.active_contexts[user_id].keys())
 
         for context in self.active_contexts[user_id]:
-            context["active_contexts"] = active_contexts
+            self.active_contexts[user_id][context]["active_contexts"] = active_contexts
 
     def update_active_contexts(self, user_id):
         ''' '''
 
         is_intent = False
 
-        for context in self.active_contexts[user_id]:
+        # list() is used because elements of dict are deleted through iterations
+        for context in list(self.active_contexts[user_id]):
 
             now = datetime.now()
             # Check if the context is an unfinished intent
@@ -196,8 +197,11 @@ class AgentModel():
                 lifespan = self.contexts_info[context]['lifespan']
                 is_intent = False
 
-            time_condition = datetime.now() - context['time_created'] <= lifespan[0]
-            request_condition = self.requests_num[user_id] - context['request_num'] <= lifespan[1]
+            # Python showing nested dict's datetime as str
+            context_time_created = datetime.strptime(self.active_contexts[user_id][context]['time_created'], "%Y-%m-%d %H:%M:%S")
+
+            time_condition = datetime.now() - context_time_created <= timedelta(minutes=lifespan[0])
+            request_condition = self.requests_num[user_id] - self.active_contexts[user_id][context]['request_num'] <= lifespan[1]
 
             # If one of the two condition is False then remove the given intent/context
             if not (time_condition and request_condition):
@@ -209,7 +213,7 @@ class AgentModel():
                     del self.incomplete_intents_stack[-1]
 
             # Correct the active contexts entry in all active contexts
-            self.assign_active_contexts()
+            self.assign_active_contexts(user_id)
 
     def apply_intent_action(self, intent, analyzed_text, user_id):
         ''' This is the part were the 'fullfillment is happening.
@@ -238,7 +242,8 @@ class AgentModel():
             request_index = -1
 
             for request in self.incomplete_intents_stack:
-                if all_parameters_found(intent, request):
+                incomplete_intent = self.intents_info[request['intents']['name']]
+                if all_parameters_found(incomplete_intent, request):
                     request_index = self.incomplete_intents_stack.index(request)
                     break
 
@@ -253,11 +258,12 @@ class AgentModel():
                 self.active_contexts[user_id].pop(new_intent['tag'] + ' - Parameters', None)
 
                 # Set the context
-                if 'context_set' in ready_request:
-                    self.active_contexts[user_id][intent['context_set']] = ready_request
+                if 'context_set' in new_intent:
+                    self.active_contexts[user_id][new_intent['context_set']] = ready_request
 
-                # Since a new context was added, update the "active_contexts" entry
-                self.assign_active_contexts()
+                    # Since a new context was added, update the "active_contexts" entry
+                    self.assign_active_contexts(user_id)
+                    print(list(self.active_contexts.keys()))
 
                 # Apply the action for the completed intent
                 ready_request = self.apply_intent_action(new_intent, ready_request, user_id)
@@ -266,18 +272,19 @@ class AgentModel():
                 ready_request['information_intent'] = analyzed_text['intents']
 
                 # Get the response for the completed Intent
-                ready_request['response'] = self.get_intent_response(intent, ready_request)
+                ready_request['response'] = self.get_intent_response(new_intent, ready_request)
                 analyzed_text = ready_request
 
+            # All the Intents still need some parameters
             else:
                 # Pick the most recent incomplete request
-                # *If Information Intent is processed that means that
-                # IIS is not empty (Else Info would be out of context)
+                # *If Information Intent is processed that means IIS is not empty (Else Info would be out of context)
+
                 request = self.incomplete_intents_stack[0]
                 new_intent = self.intents_info[request['intents']['name']]
 
                 for parameter in new_intent['parameters']:
-                    if parameter not in request:
+                    if parameter not in request['parameters']:
                         analyzed_text['response'] = select_sentence(request['parameters'],
                                                                     new_intent['persistence_responses'][parameter])
                         break
@@ -286,10 +293,18 @@ class AgentModel():
 
     def get_intent_response(self, intent, analyzed_text):
         ''' This function is responsible for handling the responses for the Intents '''
-        response = select_sentence(analyzed_text['parameter'], intent['response'])
+
+        print("Getting response for " + intent['tag'] + " Intent")
+
+        if intent['tag'] == 'Information':
+            # The response was loaded from the Intent Action function
+            response = analyzed_text['response']
+        else:
+            response = select_sentence(analyzed_text['parameters'], intent['response'])
+
         return response
 
-    def out_of_context(intent, user_id):
+    def out_of_context(self, intent, user_id):
         ''' Returns True if given intent IS OUT of Context'''
         if intent['tag'] == 'Information':
 
@@ -316,13 +331,14 @@ class AgentModel():
         intent = self.intents_info[analyzed_text['intents']['name']]
 
         # Update the Active Contexts and the Incomplete Intents Stack
-        self.update_active_contexts() # To-do
+        self.update_active_contexts(user_id) # To-do
 
         # Check if the given intent is out of context
         if self.out_of_context(intent, user_id):
             # Go to Fallback responses
             response = select_sentence({}, self.fallback_responses)
             analyzed_text['response'] = response
+            analyzed_text['active_contexts'] = list(self.active_contexts[user_id])
             return analyzed_text
 
         # In Context
@@ -335,8 +351,8 @@ class AgentModel():
                 if "context_set" in intent:
                     self.active_contexts[user_id][intent["context_set"]] = analyzed_text
 
-                # Since a new context was added, update the "active_contexts" entry
-                self.assign_active_contexts()
+                    # Since a new context was added, update the "active_contexts" entry
+                    self.assign_active_contexts(user_id)
 
                 # Apply the action for the specific intent
                 analyzed_text = self.apply_intent_action(intent, analyzed_text, user_id)
@@ -345,12 +361,16 @@ class AgentModel():
                 analyzed_text['response'] = self.get_intent_response(intent, analyzed_text)
                 return analyzed_text
 
+            # Context is Incomplete
             else:
                 # User must present missing parameters
 
                 # Add the Incomplete Intent to the current contexts
                 intent_name = intent['tag'] + " - Parameters"
                 self.active_contexts[user_id][intent_name] = analyzed_text
+
+                # Since a new context was added, update the "active_contexts" entry
+                self.assign_active_contexts(user_id)
 
                 # Update the IIS
                 self.incomplete_intents_stack.insert(0, analyzed_text)
@@ -367,6 +387,9 @@ class AgentModel():
     def printResponse(self, input_text):
 
         prediction = self.getResponse(input_text)
+
+        if not isinstance(prediction['time_created'], str):
+            prediction['time_created'] = prediction['time_created'].strftime("%Y-%m-%d %H:%M:%S")
 
         if prediction != None:
             print(json.dumps(prediction, indent=4, sort_keys=True))
