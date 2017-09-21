@@ -73,4 +73,3 @@ INTENTS = {
         "lifespan" : [1,3]
     },
 }
-
