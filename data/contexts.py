@@ -1,9 +1,12 @@
 # This is the Contexts Map
 
 CONTEXTS = {
+    'Adding-Event' : {
+        'lifespan' : [2, 5]
+    },
 
-    'idle': {
-        "out_of_context" : {"Information" : ["Was not doing anything sir",
-                                             "Was idle, I didn't need any extra information"]}
-    }
+    'Checking-the-Schedule' : {
+        'lifespan' : [5, 5]
+    },
+
 }

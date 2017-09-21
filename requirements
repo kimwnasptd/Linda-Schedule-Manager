@@ -1,9 +1,4 @@
-DeepSpeech: https://github.com/mozilla/DeepSpeech
--------------------------------------------------
-
-Rasa.ai: https://github.com/RasaHQ/
------------------------------------
--e .
+rasa_nlu
 gevent==1.2.1
 flask==0.12
 flask-cors==3.0.3
@@ -15,4 +10,11 @@ jsonschema==2.6.0
 matplotlib==1.5.3
 requests==2.14.2
 tqdm==4.11.2
-numpy==1.12.1
+numpy
+sklearn==0.19.0
+sklearn_crfsuite
+spacy
+duckling
+scipy
+
+# python -m spacy.en.download all
