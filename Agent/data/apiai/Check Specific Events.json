@@ -1,0 +1,228 @@
+{
+  "userSays": [
+    {
+      "id": "c55a54bb-12ef-4456-87d8-55a337ba0330",
+      "data": [
+        {
+          "text": "are there any "
+        },
+        {
+          "text": "exercises",
+          "alias": "eventType",
+          "meta": "@eventType",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e0c7d9fc-745f-4251-8e97-85f959cb3b69",
+      "data": [
+        {
+          "text": "and up to when do I have to finish the "
+        },
+        {
+          "text": "exercises",
+          "alias": "eventType",
+          "meta": "@eventType",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5784c9ac-e042-4711-a7ab-e7b8f0c00969",
+      "data": [
+        {
+          "text": "and for when are the "
+        },
+        {
+          "text": "two first",
+          "alias": "ordinal",
+          "meta": "@sys.ordinal",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "assignments",
+          "alias": "action",
+          "meta": "@action",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "1dd70698-1279-440d-b514-3b31abbfb663",
+      "data": [
+        {
+          "text": "what is the date of the "
+        },
+        {
+          "text": "exams",
+          "alias": "eventType",
+          "meta": "@eventType",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "8e2048b0-a2bc-4a13-a0ab-340c35ed34dd",
+      "data": [
+        {
+          "text": "what is the deadline of the "
+        },
+        {
+          "text": "assignments",
+          "alias": "action",
+          "meta": "@action",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "0602ca50-eae3-4ced-ab51-6043689897a7",
+      "data": [
+        {
+          "text": "and which of them are for "
+        },
+        {
+          "text": "tomorrow",
+          "alias": "date",
+          "meta": "@sys.date",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9806cf2a-87cd-4989-85c9-4b890b74e834",
+      "data": [
+        {
+          "text": "and are there any "
+        },
+        {
+          "text": "assignments",
+          "alias": "action",
+          "meta": "@action",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e4f43cae-656f-4b39-81e6-36d14f07ac92",
+      "data": [
+        {
+          "text": "is any of them a "
+        },
+        {
+          "text": "meeting",
+          "alias": "eventType",
+          "meta": "@eventType",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "92b39b1e-70d4-4137-9630-fe197836f400",
+      "data": [
+        {
+          "text": "any "
+        },
+        {
+          "text": "assignments",
+          "alias": "action",
+          "meta": "@action",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "30d839a5-16c1-44a8-9f8a-97efc7b8287f",
+      "data": [
+        {
+          "text": "how many of them are for "
+        },
+        {
+          "text": "after six pm",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "ff10ef4f-9d9e-4dd6-8876-8eb0f8b77daa",
+  "name": "Check Specific Events",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@sys.time",
+          "name": "time",
+          "value": "$time",
+          "isList": false
+        },
+        {
+          "dataType": "@action",
+          "name": "action",
+          "value": "$action",
+          "isList": false
+        },
+        {
+          "dataType": "@eventType",
+          "name": "eventType",
+          "value": "$eventType",
+          "isList": false
+        },
+        {
+          "dataType": "@sys.date",
+          "name": "date",
+          "value": "$date",
+          "isList": false
+        },
+        {
+          "dataType": "@sys.ordinal",
+          "name": "ordinal",
+          "value": "$ordinal",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

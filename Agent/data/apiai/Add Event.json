@@ -1182,6 +1182,7 @@
           "isList": false
         },
         {
+          "required": true,
           "dataType": "@sys.time",
           "name": "time",
           "value": "$time",

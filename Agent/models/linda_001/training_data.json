@@ -2,1482 +2,2286 @@
   "rasa_nlu_data": {
     "common_examples": [
       {
+        "intent": "Remove Last Added Event",
         "entities": [],
-        "text": "nice, keep it up",
-        "intent": "Positive"
+        "text": "sorry I didn't mean that remove it"
       },
       {
+        "intent": "Remove Last Added Event",
         "entities": [],
-        "text": "good job",
-        "intent": "Positive"
+        "text": "actually forget about it"
       },
       {
-        "entities": [],
-        "text": "well done",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "don't stop",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "nice",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "good",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "positive",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "yes, don't stop",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "yes, dont stop",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "yes, keep it up",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "continue",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "of course",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "yes",
-        "intent": "Positive"
-      },
-      {
-        "entities": [],
-        "text": "@action @eventType",
-        "intent": "Add Event"
-      },
-      {
-        "entities": [],
-        "text": "@action @eventType on @subject for @sys.date",
-        "intent": "Add Event"
-      },
-      {
+        "intent": "Remove Last Added Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
-            "start": 0,
-            "value": "add"
-          },
-          {
-            "entity": "eventType",
-            "end": 14,
-            "start": 4,
-            "value": "assignment"
+            "value": "add",
+            "start": 6,
+            "end": 9
           }
         ],
-        "text": "add assignment for right now",
-        "intent": "Add Event"
+        "text": "don't add it"
       },
       {
+        "intent": "Remove Last Added Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "add",
+            "start": 16,
+            "end": 19
+          }
+        ],
+        "text": "no my bad don't add it"
+      },
+      {
+        "intent": "Remove Last Added Event",
+        "entities": [],
+        "text": "cancel it"
+      },
+      {
+        "intent": "Remove Last Added Event",
+        "entities": [],
+        "text": "my mistake cancel it"
+      },
+      {
+        "intent": "Remove Last Added Event",
+        "entities": [],
+        "text": "sorry delete that"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "nice, keep it up"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "good job"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "well done"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "don't stop"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "nice"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "good"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "positive"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "yes, don't stop"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "yes, dont stop"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "yes, keep it up"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "continue"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "of course"
+      },
+      {
+        "intent": "Positive",
+        "entities": [],
+        "text": "yes"
+      },
+      {
+        "intent": "Add Event",
+        "entities": [],
+        "text": "@action @eventType"
+      },
+      {
+        "intent": "Add Event",
+        "entities": [],
+        "text": "@action @eventType on @subject for @sys.date"
+      },
+      {
+        "intent": "Add Event",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "add",
             "start": 0,
-            "value": "add"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 7,
+            "value": "assignment",
             "start": 4,
-            "value": "lab"
+            "end": 14
+          }
+        ],
+        "text": "add assignment for right now"
+      },
+      {
+        "intent": "Add Event",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "add",
+            "start": 0,
+            "end": 3
+          },
+          {
+            "entity": "eventType",
+            "value": "lab",
+            "start": 4,
+            "end": 7
           },
           {
             "entity": "subject",
-            "end": 27,
+            "value": "advanced physics",
             "start": 11,
-            "value": "advanced physics"
+            "end": 27
           },
           {
             "entity": "date",
-            "end": 40,
+            "value": "tomorrow",
             "start": 32,
-            "value": "tomorrow"
+            "end": 40
           }
         ],
-        "text": "add lab on advanced physics for tomorrow",
-        "intent": "Add Event"
+        "text": "add lab on advanced physics for tomorrow"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "add",
             "start": 0,
-            "value": "add"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 12,
+            "value": "exercise",
             "start": 4,
-            "value": "exercise"
+            "end": 12
           },
           {
             "entity": "date",
-            "end": 27,
+            "value": "tomorrow",
             "start": 19,
-            "value": "tomorrow"
+            "end": 27
           }
         ],
-        "text": "add exercise until tomorrow",
-        "intent": "Add Event"
+        "text": "add exercise until tomorrow"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "put",
             "start": 0,
-            "value": "put"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 20,
+            "value": "exercise",
             "start": 12,
-            "value": "exercise"
+            "end": 20
           },
           {
             "entity": "subject",
-            "end": 41,
+            "value": "operating systems",
             "start": 24,
-            "value": "operating systems"
+            "end": 41
           },
           {
             "entity": "date-period",
-            "end": 59,
+            "value": "until next Sunday",
             "start": 42,
-            "value": "until next Sunday"
+            "end": 59
           }
         ],
-        "text": "put another exercise on operating systems until next Sunday",
-        "intent": "Add Event"
+        "text": "put another exercise on operating systems until next Sunday"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "add",
             "start": 0,
-            "value": "add"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 11,
+            "value": "meeting",
             "start": 4,
-            "value": "meeting"
+            "end": 11
           },
           {
             "entity": "subject",
-            "end": 38,
+            "value": "artificial intelligence",
             "start": 15,
-            "value": "artificial intelligence"
+            "end": 38
           },
           {
             "entity": "date",
-            "end": 51,
+            "value": "Saturday",
             "start": 43,
-            "value": "Saturday"
+            "end": 51
           }
         ],
-        "text": "add meeting on artificial intelligence for Saturday",
-        "intent": "Add Event"
+        "text": "add meeting on artificial intelligence for Saturday"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "add",
             "start": 0,
-            "value": "add"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 14,
+            "value": "assignment",
             "start": 4,
-            "value": "assignment"
+            "end": 14
           },
           {
             "entity": "subject",
-            "end": 39,
+            "value": "programming languages",
             "start": 18,
-            "value": "programming languages"
+            "end": 39
           },
           {
             "entity": "date-period",
-            "end": 60,
+            "value": "Friday next week",
             "start": 44,
-            "value": "Friday next week"
+            "end": 60
           }
         ],
-        "text": "add assignment on programming languages for Friday next week",
-        "intent": "Add Event"
+        "text": "add assignment on programming languages for Friday next week"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 14,
+            "value": "set up",
             "start": 8,
-            "value": "set up"
+            "end": 14
           },
           {
             "entity": "eventType",
-            "end": 33,
+            "value": "assignment",
             "start": 23,
-            "value": "assignment"
+            "end": 33
           },
           {
             "entity": "subject",
-            "end": 46,
+            "value": "databases",
             "start": 37,
-            "value": "databases"
+            "end": 46
           },
           {
             "entity": "date-period",
-            "end": 60,
+            "value": "next week",
             "start": 51,
-            "value": "next week"
+            "end": 60
           }
         ],
-        "text": "Can you set up another assignment on databases for next week?",
-        "intent": "Add Event"
+        "text": "Can you set up another assignment on databases for next week?"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "Put",
             "start": 0,
-            "value": "Put"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 20,
+            "value": "exercise",
             "start": 12,
-            "value": "exercise"
+            "end": 20
           },
           {
             "entity": "subject",
-            "end": 36,
+            "value": "architecture",
             "start": 24,
-            "value": "architecture"
+            "end": 36
           },
           {
             "entity": "date",
-            "end": 49,
+            "value": "tomorrow",
             "start": 41,
-            "value": "tomorrow"
+            "end": 49
           }
         ],
-        "text": "Put another exercise on architecture for tomorrow",
-        "intent": "Add Event"
+        "text": "Put another exercise on architecture for tomorrow"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "Add",
             "start": 0,
-            "value": "Add"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 14,
+            "value": "assignment",
             "start": 4,
-            "value": "assignment"
+            "end": 14
           },
           {
             "entity": "subject",
-            "end": 34,
+            "value": "computer science",
             "start": 18,
-            "value": "computer science"
+            "end": 34
           },
           {
             "entity": "date",
-            "end": 50,
+            "value": "next Friday",
             "start": 39,
-            "value": "next Friday"
+            "end": 50
           }
         ],
-        "text": "Add assignment on computer science for next Friday",
-        "intent": "Add Event"
+        "text": "Add assignment on computer science for next Friday"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "add",
             "start": 0,
-            "value": "add"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 9,
+            "value": "class",
             "start": 4,
-            "value": "class"
+            "end": 9
           },
           {
             "entity": "date",
-            "end": 22,
+            "value": "tomorrow",
             "start": 14,
-            "value": "tomorrow"
+            "end": 22
           },
           {
             "entity": "time",
-            "end": 38,
+            "value": "morning at nine",
             "start": 23,
-            "value": "morning at nine"
+            "end": 38
           }
         ],
-        "text": "add class for tomorrow morning at nine",
-        "intent": "Add Event"
+        "text": "add class for tomorrow morning at nine"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 8,
+            "value": "I have a",
             "start": 0,
-            "value": "I have a"
+            "end": 8
           },
           {
             "entity": "eventType",
-            "end": 16,
+            "value": "meeting",
             "start": 9,
-            "value": "meeting"
+            "end": 16
           },
           {
             "entity": "given-name",
-            "end": 29,
+            "value": "Gregory",
             "start": 22,
-            "value": "Gregory"
+            "end": 29
           },
           {
             "entity": "date",
-            "end": 41,
+            "value": "at Saturday",
             "start": 30,
-            "value": "at Saturday"
+            "end": 41
           },
           {
             "entity": "time",
-            "end": 49,
+            "value": "evening",
             "start": 42,
-            "value": "evening"
+            "end": 49
           },
           {
             "entity": "time1",
-            "end": 54,
+            "value": "at 9",
             "start": 50,
-            "value": "at 9"
+            "end": 54
           }
         ],
-        "text": "I have a meeting with Gregory at Saturday evening at 9",
-        "intent": "Add Event"
+        "text": "I have a meeting with Gregory at Saturday evening at 9"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 8,
+            "value": "see",
             "start": 5,
-            "value": "see"
+            "end": 8
           },
           {
             "entity": "persons",
-            "end": 14,
+            "value": "Chris",
             "start": 9,
-            "value": "Chris"
+            "end": 14
           },
           {
             "entity": "date",
-            "end": 28,
+            "value": "tonight",
             "start": 21,
-            "value": "tonight"
+            "end": 28
           }
         ],
-        "text": "I'll see Chris later tonight",
-        "intent": "Add Event"
+        "text": "I'll see Chris later tonight"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "Add",
             "start": 0,
-            "value": "Add"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 16,
+            "value": "classes",
             "start": 9,
-            "value": "classes"
+            "end": 16
           },
           {
             "entity": "date",
-            "end": 27,
+            "value": "Friday",
             "start": 21,
-            "value": "Friday"
+            "end": 27
           },
           {
             "entity": "time-period",
-            "end": 42,
+            "value": "evening at ten",
             "start": 28,
-            "value": "evening at ten"
+            "end": 42
           }
         ],
-        "text": "Add some classes for Friday evening at ten",
-        "intent": "Add Event"
+        "text": "Add some classes for Friday evening at ten"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "@sys.ignore",
-            "end": 3,
+            "value": "Add",
             "start": 0,
-            "value": "Add"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 14,
+            "value": "assignment",
             "start": 4,
-            "value": "assignment"
+            "end": 14
           },
           {
             "entity": "date",
-            "end": 27,
+            "value": "tomorrow",
             "start": 19,
-            "value": "tomorrow"
+            "end": 27
           },
           {
             "entity": "time-period",
-            "end": 43,
+            "value": "morning at nine",
             "start": 28,
-            "value": "morning at nine"
+            "end": 43
           }
         ],
-        "text": "Add assignment for tomorrow morning at nine",
-        "intent": "Add Event"
+        "text": "Add assignment for tomorrow morning at nine"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 12,
+            "value": "go",
             "start": 10,
-            "value": "go"
+            "end": 12
           },
           {
             "entity": "eventType",
-            "end": 25,
+            "value": "meeting",
             "start": 18,
-            "value": "meeting"
+            "end": 25
           },
           {
             "entity": "date",
-            "end": 34,
+            "value": "tomorrow",
             "start": 26,
-            "value": "tomorrow"
+            "end": 34
           }
         ],
-        "text": "I have to go to a meeting tomorrow",
-        "intent": "Add Event"
+        "text": "I have to go to a meeting tomorrow"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 13,
+            "value": "attend",
             "start": 7,
-            "value": "attend"
+            "end": 13
           },
           {
             "entity": "eventType",
-            "end": 21,
+            "value": "classes",
             "start": 14,
-            "value": "classes"
+            "end": 21
           },
           {
             "entity": "date-period",
-            "end": 43,
+            "value": "the week",
             "start": 35,
-            "value": "the week"
+            "end": 43
           }
         ],
-        "text": "I must attend classes every day of the week",
-        "intent": "Add Event"
+        "text": "I must attend classes every day of the week"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 16,
+            "value": "attend",
             "start": 10,
-            "value": "attend"
+            "end": 16
           },
           {
             "entity": "eventType",
-            "end": 24,
+            "value": "class",
             "start": 19,
-            "value": "class"
+            "end": 24
           },
           {
             "entity": "date",
-            "end": 33,
+            "value": "tomorrow",
             "start": 25,
-            "value": "tomorrow"
+            "end": 33
           }
         ],
-        "text": "I have to attend a class tomorrow",
-        "intent": "Add Event"
+        "text": "I have to attend a class tomorrow"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "eventType",
-            "end": 19,
+            "value": "appointment",
             "start": 8,
-            "value": "appointment"
+            "end": 19
           },
           {
             "entity": "action",
-            "end": 29,
+            "value": "showed up",
             "start": 20,
-            "value": "showed up"
+            "end": 29
           },
           {
             "entity": "date",
-            "end": 42,
+            "value": "tomorrow",
             "start": 34,
-            "value": "tomorrow"
+            "end": 42
           }
         ],
-        "text": "Another appointment showed up for tomorrow",
-        "intent": "Add Event"
+        "text": "Another appointment showed up for tomorrow"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 10,
+            "value": "added",
             "start": 5,
-            "value": "added"
+            "end": 10
           },
           {
             "entity": "eventType",
-            "end": 16,
+            "value": "lab",
             "start": 13,
-            "value": "lab"
+            "end": 16
           },
           {
             "entity": "date",
-            "end": 26,
+            "value": "on Friday",
             "start": 17,
-            "value": "on Friday"
+            "end": 26
           },
           {
             "entity": "time",
-            "end": 34,
+            "value": "at 6:30",
             "start": 27,
-            "value": "at 6:30"
+            "end": 34
           }
         ],
-        "text": "They added a lab on Friday at 6:30",
-        "intent": "Add Event"
+        "text": "They added a lab on Friday at 6:30"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 11,
+            "value": "go out",
             "start": 5,
-            "value": "go out"
+            "end": 11
           },
           {
             "entity": "given-name",
-            "end": 23,
+            "value": "George",
             "start": 17,
-            "value": "George"
+            "end": 23
           }
         ],
-        "text": "I'll go out with George later on",
-        "intent": "Add Event"
+        "text": "I'll go out with George later on"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 14,
+            "value": "hang out",
             "start": 6,
-            "value": "hang out"
+            "end": 14
           },
           {
             "entity": "persons",
-            "end": 28,
+            "value": "the guys",
             "start": 20,
-            "value": "the guys"
+            "end": 28
           },
           {
             "entity": "date",
-            "end": 40,
+            "value": "on Saturday",
             "start": 29,
-            "value": "on Saturday"
+            "end": 40
           },
           {
             "entity": "time",
-            "end": 48,
+            "value": "evening",
             "start": 41,
-            "value": "evening"
+            "end": 48
           }
         ],
-        "text": "We'll hang out with the guys on Saturday evening",
-        "intent": "Add Event"
+        "text": "We'll hang out with the guys on Saturday evening"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 8,
+            "value": "I have a",
             "start": 0,
-            "value": "I have a"
+            "end": 8
           },
           {
             "entity": "eventType",
-            "end": 14,
+            "value": "class",
             "start": 9,
-            "value": "class"
+            "end": 14
           },
           {
             "entity": "date",
-            "end": 27,
+            "value": "tomorrow",
             "start": 19,
-            "value": "tomorrow"
+            "end": 27
           },
           {
             "entity": "time",
-            "end": 50,
+            "value": "at 8:30 in the morning",
             "start": 28,
-            "value": "at 8:30 in the morning"
+            "end": 50
           }
         ],
-        "text": "I have a class for tomorrow at 8:30 in the morning.",
-        "intent": "Add Event"
+        "text": "I have a class for tomorrow at 8:30 in the morning."
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "eventType",
-            "end": 14,
+            "value": "appointment",
             "start": 3,
-            "value": "appointment"
+            "end": 14
           },
           {
             "entity": "@sys.ignore",
-            "end": 38,
+            "value": "yesterday",
             "start": 29,
-            "value": "yesterday"
+            "end": 38
           },
           {
             "entity": "date",
-            "end": 51,
+            "value": "for tomorrow",
             "start": 39,
-            "value": "for tomorrow"
+            "end": 51
           }
         ],
-        "text": "An appointment just happened yesterday for tomorrow",
-        "intent": "Add Event"
+        "text": "An appointment just happened yesterday for tomorrow"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "given-name",
-            "end": 9,
+            "value": "Linda",
             "start": 4,
-            "value": "Linda"
+            "end": 9
           },
           {
             "entity": "action",
-            "end": 29,
+            "value": "assignment",
             "start": 19,
-            "value": "assignment"
+            "end": 29
           },
           {
             "entity": "date",
-            "end": 57,
+            "value": "Saturday",
             "start": 49,
-            "value": "Saturday"
+            "end": 57
           }
         ],
-        "text": "Hey Linda, another assignment just showed up for Saturday.",
-        "intent": "Add Event"
+        "text": "Hey Linda, another assignment just showed up for Saturday."
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 10,
+            "value": "put",
             "start": 7,
-            "value": "put"
+            "end": 10
           },
           {
             "entity": "eventType",
-            "end": 24,
+            "value": "assignment",
             "start": 14,
-            "value": "assignment"
+            "end": 24
           },
           {
             "entity": "time",
-            "end": 32,
+            "value": "at 2:30",
             "start": 25,
-            "value": "at 2:30"
+            "end": 32
           },
           {
             "entity": "date",
-            "end": 42,
+            "value": "on Friday",
             "start": 33,
-            "value": "on Friday"
+            "end": 42
           }
         ],
-        "text": "please put an assignment at 2:30 on Friday",
-        "intent": "Add Event"
+        "text": "please put an assignment at 2:30 on Friday"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "given-name",
-            "end": 5,
+            "value": "Linda",
             "start": 0,
-            "value": "Linda"
+            "end": 5
           },
           {
             "entity": "action",
-            "end": 27,
+            "value": "add",
             "start": 24,
-            "value": "add"
+            "end": 27
           },
           {
             "entity": "eventType",
-            "end": 47,
+            "value": "appointment",
             "start": 36,
-            "value": "appointment"
+            "end": 47
           },
           {
             "entity": "date",
-            "end": 66,
+            "value": "Sunday",
             "start": 60,
-            "value": "Sunday"
+            "end": 66
           }
         ],
-        "text": "Linda, could you please add another appointment for the net Sunday?",
-        "intent": "Add Event"
+        "text": "Linda, could you please add another appointment for the net Sunday?"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "add",
             "start": 0,
-            "value": "add"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 14,
+            "value": "assignment",
             "start": 4,
-            "value": "assignment"
+            "end": 14
           },
           {
             "entity": "any",
-            "end": 26,
+            "value": "subject",
             "start": 19,
-            "value": "subject"
+            "end": 26
           },
           {
             "entity": "date",
-            "end": 37,
+            "value": "friday",
             "start": 31,
-            "value": "friday"
+            "end": 37
           }
         ],
-        "text": "add assignment for subject for friday",
-        "intent": "Add Event"
+        "text": "add assignment for subject for friday"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 9,
+            "value": "I have an",
             "start": 0,
-            "value": "I have an"
+            "end": 9
           },
           {
             "entity": "eventType",
-            "end": 21,
+            "value": "appointment",
             "start": 10,
-            "value": "appointment"
+            "end": 21
           },
           {
             "entity": "date",
-            "end": 43,
+            "value": "Sunday, next week",
             "start": 26,
-            "value": "Sunday, next week"
+            "end": 43
           }
         ],
-        "text": "I have an appointment for Sunday, next week",
-        "intent": "Add Event"
+        "text": "I have an appointment for Sunday, next week"
       },
       {
+        "intent": "Add Event",
         "entities": [
           {
             "entity": "action",
-            "end": 3,
+            "value": "Add",
             "start": 0,
-            "value": "Add"
+            "end": 3
           },
           {
             "entity": "eventType",
-            "end": 14,
+            "value": "assignment",
             "start": 4,
-            "value": "assignment"
+            "end": 14
           },
           {
             "entity": "date",
-            "end": 27,
+            "value": "tomorrow",
             "start": 19,
-            "value": "tomorrow"
+            "end": 27
           }
         ],
-        "text": "Add assignment for tomorrow",
-        "intent": "Add Event"
+        "text": "Add assignment for tomorrow"
       },
       {
-        "entities": [],
-        "text": "what are you doing now",
-        "intent": "Check Current State"
-      },
-      {
-        "entities": [],
-        "text": "What are you doing right now?",
-        "intent": "Check Current State"
-      },
-      {
-        "entities": [
-          {
-            "entity": "eventType",
-            "end": 11,
-            "start": 0,
-            "value": "assignments"
-          },
-          {
-            "entity": "date",
-            "end": 21,
-            "start": 16,
-            "value": "today"
-          }
-        ],
-        "text": "assignments for today",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "date",
-            "end": 21,
-            "start": 16,
-            "value": "today"
-          }
-        ],
-        "text": "What's going on today",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "date",
-            "end": 21,
-            "start": 16,
-            "value": "today"
-          }
-        ],
-        "text": "What's the deal today",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "date",
-            "end": 27,
-            "start": 22,
-            "value": "today"
-          }
-        ],
-        "text": "Is there anything for today",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [],
-        "text": "Events for today",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "eventType",
-            "end": 12,
-            "start": 0,
-            "value": "Appointments"
-          },
-          {
-            "entity": "date",
-            "end": 22,
-            "start": 17,
-            "value": "today"
-          }
-        ],
-        "text": "Appointments for today",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "eventType",
-            "end": 12,
-            "start": 4,
-            "value": "meetings"
-          },
-          {
-            "entity": "date-period",
-            "end": 22,
-            "start": 13,
-            "value": "this week"
-          }
-        ],
-        "text": "Any meetings this week",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "eventType",
-            "end": 16,
-            "start": 5,
-            "value": "assignments"
-          },
-          {
-            "entity": "action",
-            "end": 26,
-            "start": 20,
-            "value": "I have"
-          },
-          {
-            "entity": "date-period",
-            "end": 41,
-            "start": 31,
-            "value": "this month"
-          }
-        ],
-        "text": "What assignments do I have for this month",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "eventType",
-            "end": 23,
-            "start": 12,
-            "value": "assignments"
-          },
-          {
-            "entity": "date-period",
-            "end": 36,
-            "start": 28,
-            "value": "the week"
-          }
-        ],
-        "text": "What are my assignments for the week",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "date",
-            "end": 26,
-            "start": 21,
-            "value": "today"
-          }
-        ],
-        "text": "Who do I have to see today",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "date-period",
-            "end": 23,
-            "start": 14,
-            "value": "this week"
-          }
-        ],
-        "text": "How busy am I this week",
-        "intent": "Check Events"
-      },
-      {
+        "intent": "Remove Event",
         "entities": [
           {
             "entity": "action",
-            "end": 13,
-            "start": 3,
-            "value": "I have the"
+            "value": "I have",
+            "start": 16,
+            "end": 22
           },
           {
             "entity": "date",
-            "end": 30,
-            "start": 22,
-            "value": "tomorrow"
-          }
-        ],
-        "text": "Do I have the day off tomorrow",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "action",
-            "end": 9,
-            "start": 3,
-            "value": "I have"
-          },
-          {
-            "entity": "date",
-            "end": 31,
+            "value": "on Monday",
             "start": 23,
-            "value": "tomorrow"
-          }
-        ],
-        "text": "Do I have anything for tomorrow",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
-            "entity": "eventType",
-            "end": 12,
-            "start": 5,
-            "value": "classes"
+            "end": 32
           },
           {
-            "entity": "action",
-            "end": 32,
-            "start": 26,
-            "value": "attend"
-          },
-          {
-            "entity": "date-period",
-            "end": 42,
+            "entity": "time-period",
+            "value": "morning",
             "start": 33,
-            "value": "this week"
+            "end": 40
           }
         ],
-        "text": "What classes do I have to attend this week",
-        "intent": "Check Events"
+        "text": "remove the exam I have on Monday morning"
       },
       {
+        "intent": "Remove Event",
         "entities": [
           {
             "entity": "eventType",
-            "end": 24,
-            "start": 12,
-            "value": "appointments"
+            "value": "lab",
+            "start": 11,
+            "end": 14
           },
           {
-            "entity": "date-period",
-            "end": 42,
-            "start": 29,
-            "value": "the next week"
-          }
-        ],
-        "text": "What are my appointments for the next week",
-        "intent": "Check Events"
-      },
-      {
-        "entities": [
-          {
             "entity": "date",
-            "end": 26,
-            "start": 21,
-            "value": "today"
+            "value": "tomorrow",
+            "start": 29,
+            "end": 37
           }
         ],
-        "text": "What's the plans for today",
-        "intent": "Check Events"
+        "text": "delete any lab scheduled for tomorrow"
       },
       {
+        "intent": "Remove Event",
         "entities": [
           {
             "entity": "action",
-            "end": 14,
-            "start": 8,
-            "value": "I have"
+            "value": "assignment",
+            "start": 10,
+            "end": 20
           },
           {
             "entity": "date-period",
-            "end": 34,
-            "start": 25,
-            "value": "this week"
+            "value": "the next week",
+            "start": 28,
+            "end": 41
           }
         ],
-        "text": "What do I have to do for this week",
-        "intent": "Check Events"
+        "text": "clear any assignment I have the next week"
       },
       {
+        "intent": "Information",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "add",
+            "start": 10,
+            "end": 13
+          },
+          {
+            "entity": "date",
+            "value": "Monday",
+            "start": 21,
+            "end": 27
+          }
+        ],
+        "text": "well then add it for Monday"
+      },
+      {
+        "intent": "Information",
+        "entities": [],
+        "text": "well then I think Saturday would be ideal"
+      },
+      {
+        "intent": "Information",
+        "entities": [
+          {
+            "entity": "action1",
+            "value": "see",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "entity": "action",
+            "value": "put",
+            "start": 16,
+            "end": 19
+          },
+          {
+            "entity": "date",
+            "value": "tomorrow",
+            "start": 27,
+            "end": 35
+          }
+        ],
+        "text": "I see well then put it for tomorrow"
+      },
+      {
+        "intent": "Information",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "add",
+            "start": 13,
+            "end": 16
+          },
+          {
+            "entity": "date",
+            "value": "today",
+            "start": 24,
+            "end": 29
+          }
+        ],
+        "text": "alright then add it for today"
+      },
+      {
+        "intent": "Information",
         "entities": [
           {
             "entity": "date",
-            "end": 15,
+            "value": "today",
+            "start": 0,
+            "end": 5
+          }
+        ],
+        "text": "today is fine"
+      },
+      {
+        "intent": "Information",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "Monday",
+            "start": 19,
+            "end": 25
+          }
+        ],
+        "text": "Good I want it for Monday then"
+      },
+      {
+        "intent": "Information",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "add",
+            "start": 10,
+            "end": 13
+          },
+          {
+            "entity": "date",
+            "value": "next Friday",
+            "start": 21,
+            "end": 32
+          }
+        ],
+        "text": "Thank you add it for next Friday then"
+      },
+      {
+        "intent": "Information",
+        "entities": [
+          {
+            "entity": "time",
+            "value": "at six in the morning",
+            "start": 18,
+            "end": 39
+          }
+        ],
+        "text": "Tow days from now at six in the morning is would be good"
+      },
+      {
+        "intent": "Information",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "put",
             "start": 8,
-            "value": "Tuesday"
+            "end": 11
+          },
+          {
+            "entity": "date",
+            "value": "tomorrow",
+            "start": 19,
+            "end": 27
           }
         ],
-        "text": "its for Tuesday",
-        "intent": "Information"
+        "text": "ok then put it for tomorrow"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "date",
-            "end": 14,
+            "value": "Tuesday next week",
+            "start": 0,
+            "end": 17
+          }
+        ],
+        "text": "Tuesday next week sounds good"
+      },
+      {
+        "intent": "Information",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "Tuesday",
+            "start": 8,
+            "end": 15
+          }
+        ],
+        "text": "its for Tuesday"
+      },
+      {
+        "intent": "Information",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "today",
             "start": 9,
-            "value": "today"
+            "end": 14
           }
         ],
-        "text": "it's for today",
-        "intent": "Information"
+        "text": "it's for today"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "date",
-            "end": 16,
+            "value": "Monday",
             "start": 10,
-            "value": "Monday"
+            "end": 16
           }
         ],
-        "text": "it is for Monday",
-        "intent": "Information"
+        "text": "it is for Monday"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "date-period",
-            "end": 19,
+            "value": "next week",
             "start": 10,
-            "value": "next week"
+            "end": 19
           }
         ],
-        "text": "it is for next week",
-        "intent": "Information"
+        "text": "it is for next week"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "date",
-            "end": 12,
+            "value": "tomorrow",
             "start": 4,
-            "value": "tomorrow"
+            "end": 12
           },
           {
             "entity": "time-period",
-            "end": 28,
+            "value": "morning at nine",
             "start": 13,
-            "value": "morning at nine"
+            "end": 28
           }
         ],
-        "text": "for tomorrow morning at nine",
-        "intent": "Information"
+        "text": "for tomorrow morning at nine"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "date-period",
-            "end": 41,
+            "value": "from Friday next week to Sunday next week",
             "start": 0,
-            "value": "from Friday next week to Sunday next week"
+            "end": 41
           }
         ],
-        "text": "from Friday next week to Sunday next week",
-        "intent": "Information"
+        "text": "from Friday next week to Sunday next week"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "date",
-            "end": 12,
+            "value": "tomorrow",
             "start": 4,
-            "value": "tomorrow"
+            "end": 12
           },
           {
             "entity": "time-period",
-            "end": 20,
+            "value": "morning",
             "start": 13,
-            "value": "morning"
+            "end": 20
           }
         ],
-        "text": "for tomorrow morning",
-        "intent": "Information"
+        "text": "for tomorrow morning"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "date",
-            "end": 8,
+            "value": "tomorrow",
             "start": 0,
-            "value": "tomorrow"
+            "end": 8
           }
         ],
-        "text": "tomorrow",
-        "intent": "Information"
+        "text": "tomorrow"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "eventType",
-            "end": 23,
+            "value": "assignment",
             "start": 13,
-            "value": "assignment"
+            "end": 23
           }
         ],
-        "text": "oh right, an assignment",
-        "intent": "Information"
+        "text": "oh right, an assignment"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "eventType",
-            "end": 16,
+            "value": "exercise",
             "start": 8,
-            "value": "exercise"
+            "end": 16
           }
         ],
-        "text": "It's an exercise",
-        "intent": "Information"
+        "text": "It's an exercise"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "date-period",
-            "end": 27,
+            "value": "Sunday next evening",
             "start": 8,
-            "value": "Sunday next evening"
+            "end": 27
           }
         ],
-        "text": "Its for Sunday next evening",
-        "intent": "Information"
+        "text": "Its for Sunday next evening"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "date",
-            "end": 16,
+            "value": "tomorrow",
             "start": 8,
-            "value": "tomorrow"
+            "end": 16
           }
         ],
-        "text": "Its for tomorrow",
-        "intent": "Information"
+        "text": "Its for tomorrow"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "eventType",
-            "end": 3,
+            "value": "Lab",
             "start": 0,
-            "value": "Lab"
+            "end": 3
           }
         ],
-        "text": "Lab it is",
-        "intent": "Information"
+        "text": "Lab it is"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "given-name",
-            "end": 22,
+            "value": "Linda",
             "start": 17,
-            "value": "Linda"
+            "end": 22
           },
           {
             "entity": "eventType",
-            "end": 33,
+            "value": "assignment",
             "start": 23,
-            "value": "assignment"
+            "end": 33
           }
         ],
-        "text": "Already told you Linda assignment",
-        "intent": "Information"
+        "text": "Already told you Linda assignment"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "eventType",
-            "end": 54,
+            "value": "assignment",
             "start": 44,
-            "value": "assignment"
+            "end": 54
           }
         ],
-        "text": "Come on how could you not hear that, I said assignment",
-        "intent": "Information"
+        "text": "Come on how could you not hear that, I said assignment"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "eventType",
-            "end": 14,
+            "value": "classes",
             "start": 7,
-            "value": "classes"
+            "end": 14
           }
         ],
-        "text": "I said classes",
-        "intent": "Information"
+        "text": "I said classes"
       },
       {
+        "intent": "Information",
+        "entities": [
+          {
+            "entity": "given-name",
+            "value": "Ann",
+            "start": 5,
+            "end": 8
+          }
+        ],
+        "text": "with Ann"
+      },
+      {
+        "intent": "Information",
         "entities": [
           {
             "entity": "eventType",
-            "end": 7,
+            "value": "meeting",
             "start": 0,
-            "value": "meeting"
+            "end": 7
           }
         ],
-        "text": "meeting",
-        "intent": "Information"
+        "text": "meeting"
       },
       {
+        "intent": "Information",
         "entities": [
           {
             "entity": "eventType",
-            "end": 10,
+            "value": "assignment",
             "start": 0,
-            "value": "assignment"
+            "end": 10
           }
         ],
-        "text": "assignment",
-        "intent": "Information"
+        "text": "assignment"
       },
       {
-        "entities": [],
-        "text": "please don't",
-        "intent": "Negative"
+        "intent": "Remove Event from Selection",
+        "entities": [
+          {
+            "entity": "ordinal",
+            "value": "second",
+            "start": 4,
+            "end": 10
+          },
+          {
+            "entity": "action",
+            "value": "assignment",
+            "start": 11,
+            "end": 21
+          }
+        ],
+        "text": "the second assignment got canceled"
       },
       {
-        "entities": [],
-        "text": "no, don't do it",
-        "intent": "Negative"
+        "intent": "Remove Event from Selection",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "lab",
+            "start": 11,
+            "end": 14
+          }
+        ],
+        "text": "clear that lab"
       },
       {
-        "entities": [],
-        "text": "no, I don't want that",
-        "intent": "Negative"
-      },
-      {
-        "entities": [],
-        "text": "NO",
-        "intent": "Negative"
-      },
-      {
-        "entities": [],
-        "text": "stop what you are doing",
-        "intent": "Cancel"
-      },
-      {
-        "entities": [],
-        "text": "forget what you are doing",
-        "intent": "Cancel"
-      },
-      {
-        "entities": [],
-        "text": "Forget it",
-        "intent": "Cancel"
-      },
-      {
-        "entities": [],
-        "text": "Don't do what you do anymore",
-        "intent": "Cancel"
-      },
-      {
-        "entities": [],
-        "text": "Stop whatever you are doing",
-        "intent": "Cancel"
-      },
-      {
-        "entities": [],
-        "text": "Drop it",
-        "intent": "Cancel"
-      },
-      {
-        "entities": [],
-        "text": "Stop",
-        "intent": "Cancel"
-      },
-      {
+        "intent": "Remove Event from Selection",
         "entities": [
           {
             "entity": "action",
-            "end": 9,
-            "start": 6,
-            "value": "add"
+            "value": "assignments",
+            "start": 17,
+            "end": 28
           }
         ],
-        "text": "Don't add it",
-        "intent": "Cancel"
+        "text": "now wipe all the assignments"
       },
       {
-        "entities": [],
-        "text": "Nevermind",
-        "intent": "Cancel"
+        "intent": "Remove Event from Selection",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "lab",
+            "start": 24,
+            "end": 27
+          },
+          {
+            "entity": "date-period",
+            "value": "Friday next week",
+            "start": 32,
+            "end": 48
+          }
+        ],
+        "text": "thank you now clear the lab for Friday next week"
       },
       {
-        "entities": [],
-        "text": "Abort",
-        "intent": "Cancel"
+        "intent": "Remove Event from Selection",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "exercises",
+            "start": 19,
+            "end": 28
+          }
+        ],
+        "text": "alright delete the exercises"
       },
       {
-        "entities": [],
-        "text": "Cancel that",
-        "intent": "Cancel"
+        "intent": "Remove Event from Selection",
+        "entities": [
+          {
+            "entity": "ordinal",
+            "value": "first",
+            "start": 11,
+            "end": 16
+          },
+          {
+            "entity": "eventType",
+            "value": "assignment",
+            "start": 17,
+            "end": 27
+          }
+        ],
+        "text": "remove the first assignment"
       },
       {
-        "entities": [],
-        "text": "Changed my mind",
-        "intent": "Cancel"
+        "intent": "Check Specific Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "exercises",
+            "start": 14,
+            "end": 23
+          }
+        ],
+        "text": "are there any exercises"
       },
       {
+        "intent": "Check Specific Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "exercises",
+            "start": 39,
+            "end": 48
+          }
+        ],
+        "text": "and up to when do I have to finish the exercises"
+      },
+      {
+        "intent": "Check Specific Events",
+        "entities": [
+          {
+            "entity": "ordinal",
+            "value": "two first",
+            "start": 21,
+            "end": 30
+          },
+          {
+            "entity": "action",
+            "value": "assignments",
+            "start": 31,
+            "end": 42
+          }
+        ],
+        "text": "and for when are the two first assignments"
+      },
+      {
+        "intent": "Check Specific Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "exams",
+            "start": 24,
+            "end": 29
+          }
+        ],
+        "text": "what is the date of the exams"
+      },
+      {
+        "intent": "Check Specific Events",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "assignments",
+            "start": 28,
+            "end": 39
+          }
+        ],
+        "text": "what is the deadline of the assignments"
+      },
+      {
+        "intent": "Check Specific Events",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "tomorrow",
+            "start": 26,
+            "end": 34
+          }
+        ],
+        "text": "and which of them are for tomorrow"
+      },
+      {
+        "intent": "Check Specific Events",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "assignments",
+            "start": 18,
+            "end": 29
+          }
+        ],
+        "text": "and are there any assignments"
+      },
+      {
+        "intent": "Check Specific Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "meeting",
+            "start": 17,
+            "end": 24
+          }
+        ],
+        "text": "is any of them a meeting"
+      },
+      {
+        "intent": "Check Specific Events",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "assignments",
+            "start": 4,
+            "end": 15
+          }
+        ],
+        "text": "any assignments"
+      },
+      {
+        "intent": "Check Specific Events",
+        "entities": [
+          {
+            "entity": "time",
+            "value": "after six pm",
+            "start": 25,
+            "end": 37
+          }
+        ],
+        "text": "how many of them are for after six pm"
+      },
+      {
+        "intent": "Cancel",
         "entities": [],
-        "text": "Never mind",
-        "intent": "Cancel"
+        "text": "stop what you are doing"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "forget what you are doing"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "Forget it"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "Don't do what you do anymore"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "Stop whatever you are doing"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "Drop it"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "Stop"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "add",
+            "start": 6,
+            "end": 9
+          }
+        ],
+        "text": "Don't add it"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "Nevermind"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "Abort"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "Cancel that"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "Changed my mind"
+      },
+      {
+        "intent": "Cancel",
+        "entities": [],
+        "text": "Never mind"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "assignments",
+            "start": 0,
+            "end": 11
+          },
+          {
+            "entity": "date",
+            "value": "today",
+            "start": 16,
+            "end": 21
+          }
+        ],
+        "text": "assignments for today"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "today",
+            "start": 16,
+            "end": 21
+          }
+        ],
+        "text": "What's going on today"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "today",
+            "start": 16,
+            "end": 21
+          }
+        ],
+        "text": "What's the deal today"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "today",
+            "start": 22,
+            "end": 27
+          }
+        ],
+        "text": "Is there anything for today"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [],
+        "text": "Events for today"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "Appointments",
+            "start": 0,
+            "end": 12
+          },
+          {
+            "entity": "date",
+            "value": "today",
+            "start": 17,
+            "end": 22
+          }
+        ],
+        "text": "Appointments for today"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "meetings",
+            "start": 4,
+            "end": 12
+          },
+          {
+            "entity": "date-period",
+            "value": "this week",
+            "start": 13,
+            "end": 22
+          }
+        ],
+        "text": "Any meetings this week"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "assignments",
+            "start": 5,
+            "end": 16
+          },
+          {
+            "entity": "action",
+            "value": "I have",
+            "start": 20,
+            "end": 26
+          },
+          {
+            "entity": "date-period",
+            "value": "this month",
+            "start": 31,
+            "end": 41
+          }
+        ],
+        "text": "What assignments do I have for this month"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "assignments",
+            "start": 12,
+            "end": 23
+          },
+          {
+            "entity": "date-period",
+            "value": "the week",
+            "start": 28,
+            "end": 36
+          }
+        ],
+        "text": "What are my assignments for the week"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "today",
+            "start": 21,
+            "end": 26
+          }
+        ],
+        "text": "Who do I have to see today"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "date-period",
+            "value": "this week",
+            "start": 14,
+            "end": 23
+          }
+        ],
+        "text": "How busy am I this week"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "I have the",
+            "start": 3,
+            "end": 13
+          },
+          {
+            "entity": "date",
+            "value": "tomorrow",
+            "start": 22,
+            "end": 30
+          }
+        ],
+        "text": "Do I have the day off tomorrow"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "I have",
+            "start": 3,
+            "end": 9
+          },
+          {
+            "entity": "date",
+            "value": "tomorrow",
+            "start": 23,
+            "end": 31
+          }
+        ],
+        "text": "Do I have anything for tomorrow"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "classes",
+            "start": 5,
+            "end": 12
+          },
+          {
+            "entity": "action",
+            "value": "attend",
+            "start": 26,
+            "end": 32
+          },
+          {
+            "entity": "date-period",
+            "value": "this week",
+            "start": 33,
+            "end": 42
+          }
+        ],
+        "text": "What classes do I have to attend this week"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "eventType",
+            "value": "appointments",
+            "start": 12,
+            "end": 24
+          },
+          {
+            "entity": "date-period",
+            "value": "the next week",
+            "start": 29,
+            "end": 42
+          }
+        ],
+        "text": "What are my appointments for the next week"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "today",
+            "start": 21,
+            "end": 26
+          }
+        ],
+        "text": "What's the plans for today"
+      },
+      {
+        "intent": "Check Events",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "I have",
+            "start": 8,
+            "end": 14
+          },
+          {
+            "entity": "date-period",
+            "value": "this week",
+            "start": 25,
+            "end": 34
+          }
+        ],
+        "text": "What do I have to do for this week"
+      },
+      {
+        "intent": "Check Current State",
+        "entities": [],
+        "text": "finished with all your tasks"
+      },
+      {
+        "intent": "Check Current State",
+        "entities": [],
+        "text": "what's on your mind"
+      },
+      {
+        "intent": "Check Current State",
+        "entities": [
+          {
+            "entity": "given-name",
+            "value": "Linda",
+            "start": 0,
+            "end": 5
+          }
+        ],
+        "text": "Linda"
+      },
+      {
+        "intent": "Check Current State",
+        "entities": [],
+        "text": "you available"
+      },
+      {
+        "intent": "Check Current State",
+        "entities": [],
+        "text": "are you available"
+      },
+      {
+        "intent": "Check Current State",
+        "entities": [],
+        "text": "are you doing anything right now"
+      },
+      {
+        "intent": "Check Current State",
+        "entities": [],
+        "text": "what are you working on now"
+      },
+      {
+        "intent": "Check Current State",
+        "entities": [],
+        "text": "what are you doing now"
+      },
+      {
+        "intent": "Check Current State",
+        "entities": [],
+        "text": "What are you doing right now?"
+      },
+      {
+        "intent": "Negative",
+        "entities": [],
+        "text": "please don't"
+      },
+      {
+        "intent": "Negative",
+        "entities": [],
+        "text": "no, don't do it"
+      },
+      {
+        "intent": "Negative",
+        "entities": [],
+        "text": "no, I don't want that"
+      },
+      {
+        "intent": "Negative",
+        "entities": [],
+        "text": "NO"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "Friday",
+            "start": 8,
+            "end": 14
+          }
+        ],
+        "text": "make it Friday"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "Friday",
+            "start": 17,
+            "end": 23
+          }
+        ],
+        "text": "actually make it Friday"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "Friday",
+            "start": 40,
+            "end": 46
+          }
+        ],
+        "text": "now that i think about it change it for Friday"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "put",
+            "start": 9,
+            "end": 12
+          },
+          {
+            "entity": "date",
+            "value": "next Friday",
+            "start": 19,
+            "end": 30
+          }
+        ],
+        "text": "actually put it on next Friday now that i think of it"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "put",
+            "start": 0,
+            "end": 3
+          },
+          {
+            "entity": "date",
+            "value": "next Friday",
+            "start": 10,
+            "end": 21
+          }
+        ],
+        "text": "put it on next Friday now that i think of it"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "tomorrow",
+            "start": 10,
+            "end": 18
+          }
+        ],
+        "text": "make that tomorrow now that I think of it"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "Friday night",
+            "start": 24,
+            "end": 36
+          },
+          {
+            "entity": "time",
+            "value": "at nine",
+            "start": 37,
+            "end": 44
+          }
+        ],
+        "text": "change the last one for Friday night at nine"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "tomorrow",
+            "start": 41,
+            "end": 49
+          }
+        ],
+        "text": "actually correct that one it will be for tomorrow"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "Saturday",
+            "start": 31,
+            "end": 39
+          }
+        ],
+        "text": "no correct that it will be for Saturday"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "tomorrow",
+            "start": 23,
+            "end": 31
+          }
+        ],
+        "text": "actually change it for tomorrow"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "put",
+            "start": 9,
+            "end": 12
+          },
+          {
+            "entity": "date",
+            "value": "Friday",
+            "start": 20,
+            "end": 26
+          }
+        ],
+        "text": "actually put it for Friday"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "add",
+            "start": 9,
+            "end": 12
+          },
+          {
+            "entity": "date",
+            "value": "next Monday",
+            "start": 20,
+            "end": 31
+          }
+        ],
+        "text": "actually add it for next Monday"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "date-period",
+            "value": "Monday next week",
+            "start": 21,
+            "end": 37
+          }
+        ],
+        "text": "my mistake it is for Monday next week"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "given-name",
+            "value": "Sara",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "entity": "given-name1",
+            "value": "John",
+            "start": 9,
+            "end": 13
+          }
+        ],
+        "text": "Sara and John will also come"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "put",
+            "start": 20,
+            "end": 23
+          },
+          {
+            "entity": "date",
+            "value": "tomorrow",
+            "start": 33,
+            "end": 41
+          }
+        ],
+        "text": "excuse me could you put that for tomorrow"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "put",
+            "start": 20,
+            "end": 23
+          },
+          {
+            "entity": "date",
+            "value": "tonight",
+            "start": 39,
+            "end": 46
+          }
+        ],
+        "text": "excuse me could you put that for later tonight"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "action",
+            "value": "assignment",
+            "start": 10,
+            "end": 20
+          },
+          {
+            "entity": "eventType",
+            "value": "lab",
+            "start": 27,
+            "end": 30
+          }
+        ],
+        "text": "it was an assignment not a lab"
+      },
+      {
+        "intent": "Change Last Added Event",
+        "entities": [
+          {
+            "entity": "date",
+            "value": "tomorrow",
+            "start": 23,
+            "end": 31
+          },
+          {
+            "entity": "time-period",
+            "value": "morning",
+            "start": 32,
+            "end": 39
+          }
+        ],
+        "text": "actually make that for tomorrow morning"
       }
     ],
     "regex_features": []

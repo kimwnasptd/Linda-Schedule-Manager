@@ -1,0 +1,178 @@
+{
+  "userSays": [
+    {
+      "id": "8cb08eab-2a6b-4ccb-884b-0450aa961988",
+      "data": [
+        {
+          "text": "the "
+        },
+        {
+          "text": "second",
+          "alias": "ordinal",
+          "meta": "@sys.ordinal",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "assignment",
+          "alias": "action",
+          "meta": "@action",
+          "userDefined": false
+        },
+        {
+          "text": " got canceled"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c9fb2a7a-be8c-4e7a-8b98-7a9c28a31efa",
+      "data": [
+        {
+          "text": "clear that "
+        },
+        {
+          "text": "lab",
+          "alias": "eventType",
+          "meta": "@eventType",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "eaa2d382-8065-445f-a00c-6f04c0f9e2cb",
+      "data": [
+        {
+          "text": "now wipe all the "
+        },
+        {
+          "text": "assignments",
+          "alias": "action",
+          "meta": "@action",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "94302084-3d68-475e-942d-ff5a92749ee4",
+      "data": [
+        {
+          "text": "thank you now clear the "
+        },
+        {
+          "text": "lab",
+          "alias": "eventType",
+          "meta": "@eventType",
+          "userDefined": false
+        },
+        {
+          "text": " for "
+        },
+        {
+          "text": "Friday next week",
+          "alias": "date-period",
+          "meta": "@sys.date-period",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2c9b7bc6-032a-407a-b8cf-72e6fefd4390",
+      "data": [
+        {
+          "text": "alright delete the "
+        },
+        {
+          "text": "exercises",
+          "alias": "eventType",
+          "meta": "@eventType",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "a3f4d514-6b19-4603-925d-ba45605f518c",
+      "data": [
+        {
+          "text": "remove the "
+        },
+        {
+          "text": "first",
+          "alias": "ordinal",
+          "meta": "@sys.ordinal",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "assignment",
+          "alias": "eventType",
+          "meta": "@eventType",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "de441ef9-c0a2-4795-bbc9-4562756761e6",
+  "name": "Remove Event from Selection",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@sys.ordinal",
+          "name": "ordinal",
+          "value": "$ordinal",
+          "isList": false
+        },
+        {
+          "dataType": "@eventType",
+          "name": "eventType",
+          "value": "$eventType",
+          "isList": false
+        },
+        {
+          "dataType": "@sys.date-period",
+          "name": "date-period",
+          "value": "$date-period",
+          "isList": false
+        },
+        {
+          "dataType": "@action",
+          "name": "action",
+          "value": "$action",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

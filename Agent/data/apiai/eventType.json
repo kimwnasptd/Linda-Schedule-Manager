@@ -61,6 +61,12 @@
         "exercise",
         "exercises"
       ]
+    },
+    {
+      "value": "exam",
+      "synonyms": [
+        "exam"
+      ]
     }
   ],
   "isEnum": false,
