@@ -98,6 +98,7 @@ def get_parameters_list(sentence):
         in the response sentense'''
     default_parameters = ['$eventType','$DATE','$action','$date-period','$people','$time',
                           '$time-from','$time-to']
+    default_parameters += ['$context-'+x[1:] for x in default_parameters]
 
     found_parameters = []
     for parameter in default_parameters:
@@ -192,6 +193,7 @@ class AgentModel():
 
         print([x['name'] for x in intent_ranking])
         print([x['confidence'] for x in intent_ranking])
+        print("")
 
         # No need any more for intent ranking
         del result['intent_ranking']
@@ -270,14 +272,11 @@ class AgentModel():
 
         intent = self.intents_info[prediction['intent']['name']]
 
-        # If it doesn't need a specific context just return the prediction
-        if not intent['needed_context']:
-            return prediction
-
         # Put the needed context's parameters to the intent
         for context in self.get_active_contexts(user_id):
-            if context[0] in intent['needed_context']:
-                prediction['parameters']['context_parameters'] = context[1]['parameters']
+            if context[0] in intent['context_needed']:
+                for parameter in context[1]['parameters']:
+                    prediction['parameters']['context-'+parameter] = context[1]['parameters'][parameter]
 
         return prediction
 
@@ -434,13 +433,15 @@ class AgentModel():
 
     def getResponse(self, input_text, user_id='kimonas'):
 
-        # Makes sure the user_id exists and updates the requests_num
+        # Makes sure the user_id entries exists and updates the requests_num
         self.check_entries_and_request_num(user_id)
 
         # Update the Active Contexts and the Incomplete Intents Stack
         self.update_active_contexts(user_id)
 
         analyzed_text = self.handle_rasa_prediction(input_text, user_id)
+        # Add the 'active_contexts' entry
+        analyzed_text['active_contexts'] = [x[0] for x in list(self.get_active_contexts(user_id))]
 
         # Info of the given Intent
         intent = self.intents_info[analyzed_text['intent']['name']]
@@ -450,14 +451,13 @@ class AgentModel():
             # Go to Fallback responses
             response = select_sentence({}, self.fallback_responses)
             analyzed_text['response'] = response
-            analyzed_text['active_contexts'] = list(self.active_contexts[user_id])
             return analyzed_text
 
         # In Context
         else:
             # Add the needed context's parameters to the intent
             analyzed_text = self.assign_context_parameters(analyzed_text, user_id)
-            
+
             # Context complete
             if all_parameters_found(intent, analyzed_text):
                 # All the needed parameters were provided

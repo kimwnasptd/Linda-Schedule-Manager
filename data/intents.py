@@ -89,8 +89,9 @@ INTENTS = {
         "parameters": [],
         "persistence_responses": {},
         "response" : ["Just modified it.",
-                      "Yes sir, your $eventType just got fixed.",
-                      "Right away, just edited your $eventType."],
+                      "Yes sir, fixed your $context-eventType.",
+                      "Right away, just edited your $context-eventType",
+                      "Changed you $context-eventType, if you need anything else tell me"],
         "context_needed" : ["Adding-Event"],
         "lifespan" : [1, 3]
     },
