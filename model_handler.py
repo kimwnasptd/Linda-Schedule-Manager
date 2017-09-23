@@ -349,7 +349,15 @@ class AgentModel():
         # Cancel Action is embeded with the core logic. Not advised to edit this code
         if intent['tag'] == 'Cancel':
             # Remove the first entry (most recent incomplete intent) from IIS
+            intent_name = self.incomplete_intents_stack[0]['intent']['name']
             del self.incomplete_intents_stack[0]
+            self.active_contexts[user_id].pop(intent_name + ' - Parameters', None)
+
+            # Since a context was removed, update the 'active_contexts' for the current active contexts
+            self.assign_active_contexts(user_id)
+
+            # Fix the 'active_contexts entry'
+            analyzed_text['active_contexts'] = [x[0] for x in list(self.get_active_contexts(user_id))]
 
         # Information Action is embeded with the core logic. Not advised to edit this code
         if intent['tag'] == 'Information':

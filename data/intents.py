@@ -4,6 +4,31 @@
 # Lifespan : [Minutes, Requests]
 
 INTENTS = {
+
+    # Core Intents
+    "Cancel" : {
+        "tag" : "Cancel",
+        "parameters" : [],
+        "persistence_responses" : {},
+        "response" : ["Stopped!",
+                      "Halted"],
+        "context_needed" : ["Adding-Event", "Checking-the-Schedule"],
+        "lifespan" : [1,3]
+    },
+
+    "Information" : {
+        "tag" : "Information",
+        "parameters" : [],
+        "persistence_responses" : {},
+        "response" : ["Thank you",
+                      "delightfully"],
+        "context_needed" : ["Adding-Event","Checking-the-Schedule"],
+        "lifespan" : [0,0]
+    },
+    # ~~~~~~~~~~~~
+
+    # ~~~~~~~~~~~~~~~~~~~~
+    # Adding Event Intents
     "Add Event" : {
         "tag" : "Add Event",
         "parameters": ["eventType","time","DATE"],
@@ -20,16 +45,31 @@ INTENTS = {
         "lifespan" : [3, 5]
     },
 
-    "Information" : {
-        "tag" : "Information",
-        "parameters" : [],
-        "persistence_responses" : {},
-        "response" : ["Thank you",
-                      "delightfully"],
-        "context_needed" : ["Adding-Event","Checking-the-Schedule"],
-        "lifespan" : [0,0]
+    "Change Last Added Event" : {
+        "tag" : "Change Last Added Event",
+        "parameters": [],
+        "persistence_responses": {},
+        "response" : ["Just modified it.",
+                      "Yes sir, fixed your $context-eventType.",
+                      "Right away, just edited your $context-eventType",
+                      "Changed you $context-eventType, if you need anything else tell me"],
+        "context_needed" : ["Adding-Event"],
+        "lifespan" : [1, 3]
     },
 
+    "Remove Last Added Event" : {
+        "tag" : "Remove Last Added Event",
+        "parameters" : [],
+        "persistence_responses" : {},
+        "response" : ["Right away, just removed them",
+                      "Just removed it",
+                      "Cleaned it up"],
+        "context_needed" : ["Adding-Event"],
+        "lifespan" : [1,3]
+    },
+    # ~~~~~~~~~~~~~~~~~~~~~
+
+    # Checking the Schedule Intents
     "Check Events" : {
         "tag" : "Check Events",
         "parameters" : ['time'],
@@ -45,6 +85,29 @@ INTENTS = {
         "context_needed" : [],
         "lifespan" : [3, 5]
     },
+
+    "Check Specific Events" : {
+        "tag" : "Check Specific Events",
+        "parameters" : [],
+        "persistence_responses" : {},
+        "response" : ["You have $eventNum $eventType for $DATE",
+                      "Not too busy, only $eventNum $eventType for $DATE",
+                      "If my hearing is correct then you have $eventNum $eventType for $DATE"],
+        "context_needed" : ["Checking-the-Schedule"],
+        "lifespan" : [3, 5]
+    },
+
+    "Remove Event from Selection" : {
+        "tag" : "Remove Event from Selection",
+        "parameters" : [],
+        "persistence_responses" : {},
+        "response" : ["Right away, just removed them",
+                      "Just removed it",
+                      "Cleaned it up"],
+        "context_needed" : ["Checking-the-Schedule"],
+        "lifespan" : [1,3]
+    },
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     "Check Current State" : {
         "tag" : "Check Current State",
@@ -74,50 +137,6 @@ INTENTS = {
         "lifespan" : [1,3]
     },
 
-    "Cancel" : {
-        "tag" : "Cancel",
-        "parameters" : [],
-        "persistence_responses" : {},
-        "response" : ["Stopped!",
-                      "Halted"],
-        "context_needed" : ["Adding-Event", "Checking-the-Schedule"],
-        "lifespan" : [1,3]
-    },
-
-    "Change Last Added Event" : {
-        "tag" : "Change Last Added Event",
-        "parameters": [],
-        "persistence_responses": {},
-        "response" : ["Just modified it.",
-                      "Yes sir, fixed your $context-eventType.",
-                      "Right away, just edited your $context-eventType",
-                      "Changed you $context-eventType, if you need anything else tell me"],
-        "context_needed" : ["Adding-Event"],
-        "lifespan" : [1, 3]
-    },
-
-    "Remove Last Added Event" : {
-        "tag" : "Remove Last Added Event",
-        "parameters" : [],
-        "persistence_responses" : {},
-        "response" : ["Right away, just removed them",
-                      "Just removed it",
-                      "Cleaned it up"],
-        "context_needed" : ["Adding-Event"],
-        "lifespan" : [1,3]
-    },
-
-    "Check Specific Events" : {
-        "tag" : "Check Specific Events",
-        "parameters" : [],
-        "persistence_responses" : {},
-        "response" : ["You have $eventNum $eventType for $DATE",
-                      "Not too busy, only $eventNum $eventType for $DATE",
-                      "If my hearing is correct then you have $eventNum $eventType for $DATE"],
-        "context_needed" : ["Checking-the-Schedule"],
-        "lifespan" : [3, 5]
-    },
-
     "Remove Event" : {
         "tag" : "Remove Event",
         "parameters" : [],
@@ -126,17 +145,6 @@ INTENTS = {
                       "Just removed it",
                       "Cleaned it up"],
         "context_needed" : [],
-        "lifespan" : [1,3]
-    },
-
-    "Remove Event from Selection" : {
-        "tag" : "Remove Event from Selection",
-        "parameters" : [],
-        "persistence_responses" : {},
-        "response" : ["Right away, just removed them",
-                      "Just removed it",
-                      "Cleaned it up"],
-        "context_needed" : ["Checking-the-Schedule"],
         "lifespan" : [1,3]
     },
 
