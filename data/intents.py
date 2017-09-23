@@ -11,7 +11,9 @@ INTENTS = {
         "parameters" : [],
         "persistence_responses" : {},
         "response" : ["Stopped!",
-                      "Halted"],
+                      "Ok, stopped it",
+                      "Yes sir, just deopped it",
+                      "Stopped as you wished"],
         "context_needed" : ["Adding-Event", "Checking-the-Schedule"],
         "lifespan" : [1,3]
     },

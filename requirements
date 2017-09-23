@@ -16,5 +16,8 @@ sklearn_crfsuite
 spacy
 duckling
 scipy==0.19.1
+gtts
+pyaudio
+SpeechRecognition
 
 # python -m spacy.en.download all

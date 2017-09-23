@@ -516,12 +516,15 @@ class AgentModel():
         else:
             print("Action Canceled")
 
+        return prediction
+
 
 if __name__ == "__main__":
 
-    #import sys
     model = AgentModel()
-    #model.printPrediction(sys.argv[1])
+    from io_handler import IOHandler
+    io = IOHandler()
+    audio = False
 
     while True:
         print('Text >> ', end='')
@@ -530,4 +533,7 @@ if __name__ == "__main__":
         if input_text == 'exit':
             break
 
-        model.printResponse(input_text)
+        response = model.printResponse(input_text)
+
+        if audio:
+            io.tts(response['response'])
